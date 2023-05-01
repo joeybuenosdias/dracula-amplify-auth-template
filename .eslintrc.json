@@ -5,6 +5,21 @@
       "error",
       "double"
     ],
-    "semi": 2
+    "semi": 2,
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "external",
+          "type",
+          "index",
+          "sibling",
+          "parent",
+          "internal",
+          "builtin",
+          "object"
+        ]
+      }
+    ]
   }
 }
