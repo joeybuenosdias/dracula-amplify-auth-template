@@ -1,46 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# dracula
+hello and welcome to dracula! dracula is a template project that comes with baked in authentication. the intention is quickly get started building any new app, without having to worry about the authentication part. the project is still a WIP but by the end I hope to have be able to spin up many apps for clients quickly. 
 
-## Getting Started
+**whats included?**
+- aws amplify
+- authentication
+- next.js
+- typescript
+- eslint configuration
+- jest
+- cspell
+- prettier
 
-First, run the development server:
+## table of contents
+- [getting started](#getting-started)
+- [folder structure](#folder-structure)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## getting started
+clone the repository
+`git clone git@github.com:joeybuenosdias/dracula-amplify-auth-template.git [NAME_OF_PROJECT]`
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+`cd [NAME_OF_PROJECT]`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+run the development server:
+`npm run dev`
 
-THis project is set intended to be a template that can be used when setting up a new app with authentication.
+## folder structure
+- pages
+    - no state or business logic, hierarchy and layout logic only
 
-Whats included:
-- TypeScript rules
-- Linting rules
-- Code formatting rules
-- Authentication
-- Unit testing
-- DevOps
-- Contributing guide
-- Quick start guide
+- components
+    - dumb components
+    - typically have no state
+    - contain styles
+    - can be reuseable
+    - consume state values
+    - PascalCase naming convention for files and components
+    - new directory for each component with re-export index.ts file, unit test file and any files for sub components/hooks. sub components/hooks should also contain their own directory following the same pattern. try to keep only 1 level of sub components/hooks. 
 
-## Learn More
+- features
+    - smart components
+    - typically manage state and expose context, provider and hooks
+    - PascalCase naming convention for files and components
+    - new directory for each component with re-export index.ts file, unit test file and any files for sub components/hooks. sub components/hooks should also contain their own directory following the same pattern. try to keep only 1 level of sub components/hooks.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

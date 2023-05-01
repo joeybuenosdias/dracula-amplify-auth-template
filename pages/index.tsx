@@ -1,14 +1,15 @@
 import { withAuthenticator } from "@aws-amplify/ui-react";
 import type { WithAuthenticatorProps } from "@aws-amplify/ui-react";
-import type { NextPage } from "next";
+import type { GetServerSidePropsResult } from "next";
+import type { ReactElement } from "react";
 import { Github } from "src/features/github";
 import { Layout } from "src/components/layout";
 
-// Must return type rule
-// Import order rule
-// no unused var rule
+type Data = {
+  renderedAt: string;
+}
 
-export function getServerSideProps() {
+export function getServerSideProps(): GetServerSidePropsResult<Data> {
   const renderedAt = new Date();
   const formattedBuildDate = renderedAt.toLocaleDateString("en-US", {
     dateStyle: "long",
@@ -23,7 +24,7 @@ export function getServerSideProps() {
   };
 }
 
-const Home: NextPage = ({ signOut, user }: WithAuthenticatorProps) => {
+function Home({ signOut, user }: WithAuthenticatorProps): ReactElement {
   return (
     <div style={{ padding: 50 }}>
       <Layout />
@@ -34,6 +35,6 @@ const Home: NextPage = ({ signOut, user }: WithAuthenticatorProps) => {
       </div>
     </div>
   );
-};
+}
 
 export default withAuthenticator(Home);
